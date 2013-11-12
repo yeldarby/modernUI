@@ -7,7 +7,31 @@ $(document).ready(function() {
   enable_reload();
   $('#icon-list').html('');
   reloadIcons();
+  
+  $('#trigger-sidebar').hammer().on('touchmove', function(e) {
+	  	e.preventDefault();
+	  });
+ hideSidebar();
+  
 });
+
+function showSidebar() {
+	$("body").addClass("offcanvas-out");
+	$('.page-outer').addClass('left');
+	
+	$('#trigger-sidebar').hammer().off('swiperight').on('swipeleft', hideSidebar);
+}
+
+function hideSidebar() {
+	$("body").removeClass("offcanvas-out");
+	$('.page-outer').removeClass('left');
+	
+	 $('#trigger-sidebar').hammer().off('swipeleft').on('swiperight', showSidebar);
+}
+
+function hideSidebar() {
+	
+}
 
 function showIcons(response) {
   var html = '';
@@ -42,6 +66,8 @@ function reloadIcons() {
 function enable_reload() {
   console.log('reloading enabled');
   $('.page-heading i.icon-reload').removeClass('hide').on('click', reloadIcons);
+  
+  $('#icons').hammer().on('swipedown', reloadIcons);
 
 }
 

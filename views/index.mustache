@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="description" content="">
     <meta name="author" content="">
 
@@ -24,8 +24,9 @@
   </head>
 <!-- NAVBAR
 ================================================== -->
-  <body>
-    <div class="page-outer">
+  <body style="height: 100%; position: relative;">
+  	<div class="page-outer">
+  		<div id="trigger-sidebar" style="position: absolute; left: 0; top: 0; bottom: 0; height: 100%; width: 80px; background-color: green; z-index: 19;"></div>
       <div class="page-inner">
         
         <div class="navbar-wrapper">
@@ -219,6 +220,7 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/hammer.js/1.0.5/jquery.hammer.min.js"></script>
     <script src="javascripts/bootstrap.min.js"></script>
     <script src="javascripts/main.js"></script>
 
